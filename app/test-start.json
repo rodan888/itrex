@@ -1,0 +1,40 @@
+[{"className": "8 A",
+  "classId": "8784hb",
+  "classList": [{
+    "childName": "Артем Козак",
+    "childGrade": "3.2"
+  },{
+    "childName": "Артур Саркисян",
+    "childGrade": "4.1"
+  },{
+    "childName": "Василий Степанов",
+    "childGrade": "4"
+  },{
+    "childName": "Ярослав Кожухов",
+     "childGrade": "2.2"
+  },{
+    "childName": "Дмитрий Никитин",
+     "childGrade": "3.3"
+  },{
+    "childName": "Юлия Соловей",
+    "childGrade": "4.7"
+  },{
+    "childName": "Анастасия Попова",
+    "childGrade": "3"
+  },{
+    "childName": "Катерина полевая",
+    "childGrade": "4.9"
+ }]
+},{"className": "11 Б",
+  "classId": "87fg4hb",
+  "classList": [{
+    "childName": "Артем Козак",
+    "childGrade": "3.2"
+  },{
+    "childName": "Артур Саркисян",
+    "childGrade": "4.1"
+  },{
+    "childName": "Василий Степанов",
+    "childGrade": "4"
+  }]
+}]

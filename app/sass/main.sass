@@ -1,0 +1,331 @@
+@import "bourbon"
+@import "_vars.sass"
+@import "_mixins.sass"
+@import "_form.sass"
+
+%extend_before
+	position: absolute
+	content: ""
+	width: 100%
+	bottom: 0
+
+%extend_inline
+	display: inline-block
+	position: relative
+	vertical-align: top
+
+label,span.label
+	font-size: $fx
+	display: block
+	margin-bottom: 10px
+
+.button
+	text-transform: uppercase
+	color: $white
+	padding: 12px 20px
+	border-radius: 3px
+	font-size: $fx
+	background-color: $plane
+	box-shadow: 0 1px 5px #666
+	font-size: $fx
+	font-weight: 600		
+	transition: box-shadow 0.3s
+	display: inline-block
+	&.orange
+		background-color: $orange
+		box-shadow: none		
+	&.light
+		background-color: transparent
+		border: 1px solid $plane
+		color: $black
+		box-shadow: none
+	&.full
+		display: block
+		text-align: center	
+		width: 100%	
+	&.big
+		display: inline-block
+		border-radius: none
+		line-height: 63px
+		padding: 0px 80px
+		text-transform: capitalize
+	&:hover
+		box-shadow: none
+
+.page-title
+	color: $white
+	font-size: 80px
+	font-family: "Inform"
+.title
+	color: $white	
+	font-size: $flg
+	text-align: center
+	&.big
+		font-size: 32px
+		font-family: 'RobotoRegular'
+	&.black
+		color: $black
+h1
+	text-align: center
+	margin-bottom: 30px
+
+
+
+.shool-calc,.domino-wrap
+	min-width: 600px
+	margin: 0 auto
+
+//Calculator	
+.class-wrap
+	>div
+		display: inline-block
+		height: 60px
+		min-width: 140px
+		position: relative
+		vertical-align: top
+		background-color: $plane
+		color: $white
+		font-size: 16px
+		text-align: center
+		cursor: pointer
+		border-top-left-radius: 3px
+		border-top-right-radius: 3px
+		&.active
+			box-shadow: 0 -1px 5px #666
+			z-index: 10
+		.class-name
+			line-height: 60px
+			padding-right: 28px
+		.delete-class
+			position: absolute
+			top: 50%
+			right: 0px
+			font-size: 16px
+			color: $white	
+			@include transform(translateY(-50%))
+		&:last-child
+			min-width: 60px			
+			color: $orange
+			border: 2px solid $orange
+			background-color: transparent
+			box-shadow: none
+			@include border-radius(3px)
+			i
+				position: absolute
+				top: 50%
+				left: 50%
+				font-size: 25px				
+				@include transform(translate(-50%,-50%))
+.child-list	
+	.child,.child-list-header
+		font-size: 0
+		position: relative		
+		&:nth-child(even)
+			background-color: $gray-light
+		&:nth-child(odd)
+			background-color: $white
+		.delete-child
+			position: absolute
+			top: 50%
+			right: -22px
+			font-size: 12px
+			color: $orange				
+			@include transform(translateY(-50%))			
+		span
+			display: inline-block
+			vertical-align: top			
+			font-size: 16px
+			line-height: 36px	
+			padding: 0 5px
+			&.child-name
+				width: 70%
+			&.child-grade
+				width: 30%
+				text-align: right
+.child-list-header	
+	span
+		line-height: 60px!important
+		font-family: 'OpenSansBold'
+form
+	text-align: center
+	padding: 25px 0
+	border-bottom: 1px solid $gray	
+	border-top: 1px solid $gray	
+	.form-group	
+		display: inline-block
+		vertical-align: top
+		input
+			min-width: 250px
+.class-info
+	form
+		font-size: 0
+		.form-group
+			font-size: 16px
+			width: 50%
+			&:first-child
+				text-align: left
+			&:last-child
+				text-align: right
+				p
+					line-height: 43px
+					font-family: 'OpenSansBold'
+			input
+				width: 250px
+
+
+//Domino
+.setting-domino
+	max-width: 300px
+	position: relative
+	.domino-header
+		margin-bottom: 55px
+		ul
+			text-align: center
+			li		
+				display: inline-block
+				vertical-align: top
+.domino
+	position: relative
+	width: 80px
+	height: 180px
+	margin: 0 auto
+	border: 1px solid $gray
+	@include border-radius(3px)
+	@include transition(transform 0.3s)	
+	&:before
+		position: absolute
+		content: ''
+		top: 50%
+		left: 10%
+		width: 80%
+		height: 1px
+		background-color: $gray	
+	&.rotate1
+		@include transform(rotate(90deg))
+	&.rotate2
+		@include transform(rotate(180deg))
+	>div
+		position: absolute
+		width: 100%
+		height: 50%
+		left: 0
+		// padding: 10%
+	.top-area
+		top: 0
+	.bottom-area
+		bottom: 0
+.domino-config
+	span
+		margin: 10px auto 20px
+		display: block
+		width: 225px
+.new-domino
+	position: absolute
+	top: 95px
+	width: 500px
+	right: -550px
+	opacity: 0
+	z-index: -1
+	@include transition(all 0.3s)
+	&.active
+		opacity: 1
+		z-index: 10
+		right: -500px
+.domino-list,.top-area,.bottom-area
+	>div
+		position: relative
+		display: inline-block
+		width: 78px
+		height: 89px
+		cursor: pointer
+		border: 1px solid $gray
+		margin-right: 2px
+		@include border-radius(3px)
+		&.one
+			span
+				top: 50%
+				left: 50%
+				margin-top: -7px
+				margin-left: -7px
+		&.two
+			span
+				&:nth-child(1)					
+					right: 5%
+					top: 5%											
+				&:nth-child(2)						
+					left: 5%
+					bottom: 5%
+		&.three
+			span
+				&:nth-child(1)					
+					right: 5%
+					top: 5%		
+				&:nth-child(2)					
+					left: 5%
+					bottom: 5%
+				&:nth-child(3)						
+					top: 50%
+					left: 50%
+					margin-top: -7px
+					margin-left: -7px	
+		&.four,	&.five	
+			span
+				&:nth-child(1)					
+					right: 5%
+					top: 5%		
+				&:nth-child(2)					
+					left: 5%
+					bottom: 5%
+				&:nth-child(3)						
+					top: 5%
+					left: 5%
+				&:nth-child(4)						
+					bottom: 5%
+					right: 5%
+		&.six
+			span
+				&:nth-child(1)
+					top: 5%
+					left: 5%					
+				&:nth-child(2)
+					top: 5%
+					right: 5%					
+				&:nth-child(3)
+					top: 50%
+					left: 5%
+					margin-top: -7px
+				&:nth-child(4)
+					top: 50%
+					right: 5%					
+					margin-top: -7px
+				&:nth-child(5)
+					bottom: 5%
+					left: 5%					
+				&:nth-child(6)
+					bottom: 5%
+					right: 5%					
+		&.five
+			span:nth-child(5)
+				top: 50%
+				left: 50%
+				margin-top: -7px
+				margin-left: -7px
+		span
+			position: absolute
+			width: 14px
+			height: 14px				
+			background-color: $plane
+			box-shadow: inset 0px 1px 3px #999
+			@include border-radius(50%)
+								
+
+
+
+
+
+
+
+
+//ALWAYS END
+@import "_routeAnimate.sass"
+@import "media"

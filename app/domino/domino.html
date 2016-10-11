@@ -1,0 +1,131 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="mt3">Domino page</h1>
+			<section>
+				<div class="domino-wrap">
+					<div class="setting-domino">
+						<div class="domino-header">
+							<ul>
+								<li>
+									<button 
+										type="button" 
+										class="button"
+										data-ng-click="rotateBack()">
+										<i class="fa fa-undo"></i>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="button" data-ng-click="select.domino = !select.domino">New domino</button>
+								</li>
+								<li>
+									<button 
+										type="button" 
+										class="button" 						
+										data-ng-click="rotateForward()">
+										<i class="fa fa-repeat"></i>
+									</button>
+								</li>
+							</ul>							
+						</div>						
+						<div class="domino" data-ng-style="{'transform': 'scale('+scale+')'+transform,'transition-duration': speed+'s'}">
+							<div id="topA" class="top-area">
+								<div addtop class="one">
+									<span></span>
+								</div>	
+							</div>
+							<div id="botA" class="bottom-area">
+								<div addtop class="one">
+									<span></span>
+								</div>	
+							</div>
+						</div>
+						<div class="domino-config">
+							<input type="range" min="1" max="1.4" step="0.05" data-ng-model="scale">
+							<span class="label">Scale domino</span>
+
+							<input type="range" min="0.2" max="2" step="0.2" data-ng-model="speed">
+							<span class="label">Anim. speed</span>
+						</div>
+
+						<div class="new-domino" data-ng-class="{true: 'active', false: ''}[select.domino]">
+							<div class="domino-list">
+								<div addtop class="one" data-id="topA">
+									<span></span>
+								</div>	
+								<div addtop class="two" data-id="topA">
+									<span></span>
+									<span></span>
+								</div>
+								<div addtop class="three" data-id="topA">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+								<div addtop class="four" data-id="topA">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+								<div addtop class="five" data-id="topA">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+								<div addtop class="six" data-id="topA">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>					
+							</div>
+
+							<div class="domino-list">
+								<div addtop class="one" data-id="botA">
+									<span></span>
+								</div>	
+								<div addtop class="two" data-id="botA">
+									<span></span>
+									<span></span>
+								</div>
+								<div addtop class="three" data-id="botA">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+								<div addtop class="four" data-id="botA">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+								<div addtop class="five" data-id="botA">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+								<div addtop class="six" data-id="botA">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>					
+							</div>
+
+						</div>		
+
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,84 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="mt3">Shool GPA calculator</h1>
+			<section>
+				<div class="shool-calc">
+					<div class="class-wrap">
+						<div class="class-item" 
+								data-ng-class="{ active: isSet(class.classId)}"
+								data-ng-repeat="class in classList">
+							<p class="class-name"
+								ng-click="setTab(class.classId)">{{class.className}}</p>
+							<button class="delete-class" data-ng-click="removeClass($index)">
+								<i class="fa fa-times"></i>
+							</button>
+						</div>					
+						<div class="add-class" data-ng-click="addClass()">							
+							<i class="fa fa-plus-square"></i>
+						</div>
+					</div>
+					<div class="calc-wrap" 
+					data-ng-show="isSet(class.classId)"
+					data-ng-repeat="class in classList">
+						<div class="class-info">
+							<form>
+								<div class="form-group">
+									<input class="input" 
+													type="text" 
+													placeholder="Class name" 
+													data-ng-model="class.className">
+								</div>
+								<div class="form-group">
+									<p>GPA = {{averageGrade(class)}}</p>
+								</div>
+							</form>
+						</div>
+						<div class="child-list">
+							<div class="child-list-header">						
+									<span class="child-name"> 
+										Children name
+									</span>
+									<span class="child-grade">
+										Children grade
+									</span>
+							</div>
+							<div class="child" data-ng-repeat="children in class.classList">
+								<span class="child-name"> 
+									{{children.childName}}
+								</span>
+								<span class="child-grade">
+									{{children.childGrade}}
+								</span>
+								<button class="delete-child" data-ng-click="removeChild($index, class)">
+									<i class="fa fa-times"></i>
+								</button>
+							</div>
+						</div>
+						<div class="add-child">
+							<form>							
+								<div class="form-group">
+									<input class="input" 
+												type="text" 
+												placeholder="Children name" 
+												data-ng-model="child.name"
+												ng-change="childN(child.name)">
+								</div>	
+								<div class="form-group">
+									<input class="input" 
+												type="number" 
+												placeholder="Children grade" 
+												data-ng-model="child.grade"
+												ng-change="childG(child.grade)">
+								</div>	
+								<div class="form-group">
+									<button type="button" class="button" data-ng-click="addChild(class)">add child</button>
+								</div>	
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>					
+	</div>
+</div>

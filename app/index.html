@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='MyApp'>
+<head>
+<meta charset="UTF-8">
+<title>Angular start</title>
+<link rel="shortcut icon" href="img/favicon.ico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<script src="libs/angular/angular.min.js"></script>
+<script src="libs/angular-route/angular-route.min.js"></script>
+<script src="libs/angular-resource/angular-resource.min.js"></script>
+<script src="libs/angular-animate/ng-animate.min.js"></script>
+
+<script src="libs/ng-map/ng-map.min.js"></script>
+
+<!-- Over script library -->
+<script src="libs/moment/moment.min.js"></script>
+<script src="libs/underscore/underscore.min.js"></script>
+<script src="libs/jQuery/jquery-2.2.0.min.js"></script>
+<script src="app.js"></script>	
+
+<!-- Temporary paths to controllers -->
+<script src="home/homepage-Ctrl.js"></script>
+<script src="calculator/calculator.ctrl.js"></script>
+<script src="domino/domino.ctrl.js"></script>
+
+<!-- Over components -->
+<script src="components/navigation/navigation.directive.js"></script>
+<script src="components/factory.js"></script>
+<script src="components/directive.js"></script>
+
+<!-- PROD COMPONENTS -->
+<link rel="stylesheet" href="css/vendor.min.css">
+<link rel="stylesheet" href="css/header.min.css">
+<link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body data-ng-cloak  >
+	<header>
+		<div class="container">
+			<div class="row">				
+				<navigation></navigation>				
+			</div>
+		</div>		
+	</header>
+
+	<main>
+		<div class="container-fluid anim-wrap" 
+			data-ng-class="animation"
+			data-ng-controller="animateCtrl">
+			<div class="view" data-ng-view>
+
+			</div>
+		</div>
+	</main>
+</body>
+</html>
